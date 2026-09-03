@@ -1,5 +1,5 @@
-# Recipe Analysis
 
+---
 ## Introduction
 
 In this project, we will examine the relationship between recipe complexity and overall nutrition. This is important because many people have very little time to cook for themselves, causing them to fall back on fast food and other non-nutritious foods. We plan to alleviate this problem by identifying recipes that are both easy and quick to make and still nutritious.
@@ -10,11 +10,11 @@ To do this, we will be using the Recipes and Ratings dataset, which contains rec
 
 `recipes.csv` contains information about the recipes themselves. There are 83,782 recipes and 12 total columns of this file.
 
-<div class="table_wrapper" markdown="1">
+```
 |    | name | id | minutes | contributor_id | submitted | tags | nutrition | n_steps | steps | description | ingredients | n_ingredients |
 |---:|:-------------------------------------|-------:|----------:|-----------------:|:------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------|----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|
 |  0 | 1 brownies in the world    best ever | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make'... | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0] |        10 | ['heat the oven to 350f and arrange the rack in the middle', 'line... | these are the most; chocolatey... | ['bittersweet chocolate', 'unsalted butter', 'eggs'... |               9 |
-</div>
+```
 
 `ratings.csv` contains the user ratings and reviews. There are 731,927 ratings and 5 columns total.
 
