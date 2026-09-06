@@ -2,21 +2,23 @@
 ---
 ## Introduction
 
-In this project, we will examine the relationship between recipe complexity and overall nutrition. This is important because many people have very little time to cook for themselves, causing them to fall back on fast food and other non-nutritious foods. We plan to alleviate this problem by identifying recipes that are both easy and quick to make and still nutritious.
+In this project, we aim to answer the question of how recipe difficulty affects nutrition. This is important because many people have very little time to cook for themselves, causing them to fall back on fast food and other non-nutritious foods. We plan to alleviate this issue by identifying whether simple recipes have enough nutrition to be healthy.
 
-To do this, we will be using the Recipes and Ratings dataset, which contains recipes and ratings from food.com that were posted in 2008. The data comes in the form of two CSV files, one containing raw recipe data and one containing the ratings. 
+To do this, we will be using the Recipes and Ratings dataset, which contains recipes and ratings from food.com that were posted in 2008. The data comes in the form of two CSV files, one containing raw recipe data and one containing the ratings.
 
 ---
 
-`recipes.csv` contains information about the recipes themselves. There are 83,782 recipes and 12 total columns of this file.
+`recipes.csv` contains information about the recipes themselves. There are 83,782 rows and 12 total columns of this file.
 
-<div class="table-wrapper" markdown="block">
-|    | name | id | minutes | contributor_id | submitted | tags | nutrition | n_steps | steps | description | ingredients | n_ingredients |
-|---:|:-------------------------------------|-------:|----------:|-----------------:|:------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------|----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|
-|  0 | 1 brownies in the world    best ever | 333281 |        40 |           985201 | 2008-10-27  | ['60-minutes-or-less', 'time-to-make'... | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0] |        10 | ['heat the oven to 350f and arrange the rack in the middle', 'line... | these are the most; chocolatey... | ['bittersweet chocolate', 'unsalted butter', 'eggs'... |               9 |
-</div>
+|    | name                                 |     id |   minutes |   contributor_id | ... |
+|---:|:-------------------------------------|-------:|----------:|-----------------:|----:|
+|  0 | 1 brownies in the world    best ever | 333281 |        40 |           985201 | ... |
+|  1 | 1 in canada chocolate chip cookies   | 453467 |        45 |          1848091 | ... |
+|  2 | 412 broccoli casserole               | 306168 |        40 |            50969 | ... |
+|  3 | millionaire pound cake               | 286009 |       120 |           461724 | ... |
+|  4 | 2000 meatloaf                        | 475785 |        90 |          2202916 | ... |
 
-`ratings.csv` contains the user ratings and reviews. There are 731,927 ratings and 5 columns total.
+`ratings.csv` contains the user ratings and reviews. There are 731,927 rows and 5 columns total.
 
 |    |   user_id |   recipe_id | date       |   rating | review                                                                                                                                                                                                        |
 |---:|----------:|------------:|:-----------|---------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
