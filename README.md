@@ -142,7 +142,7 @@ Overall, short recipes seem to have less nutrients compared to long recipes, how
 For our bivariate analysis, we can see the rating of a recipe has any relationship with how long it takes to prepare.
 
 <iframe
-  src="assets/2-minutes-hist.html"
+  src="assets/2-minutes-box.html"
   width="800"
   height="600"
   frameborder="0"
