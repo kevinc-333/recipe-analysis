@@ -266,8 +266,11 @@ Next, we added multiple features:
 
 We used `GridSearchCV` to identify the best maximum depth to use for our random forest. Since random forests are prone to overfitting if left uncapped, this hyperparameter is very important. The other major hyperparameters, `n_estimators`, was set to 10 to avoid excessively long training times. 
 
+The optimal value for `max_depth` was determined to be 46, which was what we used for our final model.
 
+This model had a much better performance. The $R^2$ on the training set was $0.95$, while the $R^2$ on the testing set was $0.78$. This is an improvement of about $0.6$, meaning it accounts for over half of the variability in `minutes`.
 
+Finally, the model was trained on the entire dataset.
 
 
 ## Fairness Analysis
@@ -278,3 +281,5 @@ This will be done via permutation test:
 * Null hypothesis: The model has equal RMSE between well reviewed recipes and poorly reviewed recipes.
 * Alternative hypothesis: The model has better RMSE for well reviewed recipes versus poorly reviewed recipes.
 * Test statistic: Difference in RMSE, well reviewed - poorly reviewed
+
+We received a p-value of $0.0$, which is lower than our significance level of $0.05$. We reject the null hypothesis, meaning we find convincing evidence that the model was unfair and had better RMSE for well reviewed recipes versus poorly reviewed recipes.
