@@ -195,7 +195,7 @@ Below is the graph comparing `protein` values for both missing ratings and non-m
   frameborder="0"
 ></iframe>
 
-There appears to be some differences, which the permutation test captured. The test returned a p-value of $0.0$, which is lower than any reasonable significance level. This means that we reject the null hypothesis; we have convincing evidence that the mean protein value is different between missing `rating` and non-missing `rating`. Thus, the missingness of `rating` is dependent on `protein`.
+There appears to be some differences, which the permutation test captured. The test returned a p-value of 0.0, which is lower than any reasonable significance level. This means that we reject the null hypothesis; we have convincing evidence that the mean protein value is different between missing `rating` and non-missing `rating`. Thus, the missingness of `rating` is dependent on `protein`.
 
 ---
 
@@ -213,7 +213,7 @@ Below is the graph comparing the values of `calories` for both missing ratings a
   frameborder="0"
 ></iframe>
 
-Once again, there seems to be some differences, but the permutation test failed to reject the null hypothesis. The p-value of $0.56$ was higher than the significance level of $0.05$, so we found no convincing evidence that the mean calorie count is different for when `rating` is missing versus not missing. This means that the missingness of `rating` is not dependent on `calories`.
+Once again, there seems to be some differences, but the permutation test failed to reject the null hypothesis. The p-value of 0.56 was higher than the significance level of 0.05, so we found no convincing evidence that the mean calorie count is different for when `rating` is missing versus not missing. This means that the missingness of `rating` is not dependent on `calories`.
 
 ## Hypothesis Testing
 
@@ -224,7 +224,7 @@ These easier, healthier recipes will be defined as "good" if the recipe takes le
 Thus, we will be running a permutation test with the following hypotheses:
 * Null hypothesis: There is no difference in mean ratings between good recipes and not good recipes
 * Alternative hypothesis: Good recipes have higher mean ratings than not good recipes
-* Test statistic: Difference in means, $\text{good}-\text{not good}$
+* Test statistic: Difference in means, good - not good
 
 Below is a graph of the results of the permutation test.
 
@@ -235,7 +235,7 @@ Below is a graph of the results of the permutation test.
   frameborder="0"
 ></iframe>
 
-Since our p-value of $0.1216$ is higher than our significance level of $0.05$, we fail to reject the null hypothesis. We don't have convincing evidence that the mean rating of good recipes is higher than the mean rating of not good recipes.
+Since our p-value of 0.1216 is higher than our significance level of 0.05, we fail to reject the null hypothesis. We don't have convincing evidence that the mean rating of good recipes is higher than the mean rating of not good recipes.
 
 ## Framing a Prediction Problem
 
@@ -243,7 +243,7 @@ Our prediction problem will be involving attempting to predict the minutes taken
 
 The response variable is `minutes`, as this is the biggest factor that affects the difficulty of a recipe. Thus, it would be helpful for a user to know how long a recipe takes before they make it, while still ensuring they can get the proper nutrition that they need.
 
-We will be evaluating our model based on the $R^2$ values, as it gives a decent sense of model performance since it represents the amount of variability that our model is capturing. It is also easy to understand since it operates on a 0 to 1 scale, with higehr values being "better".
+We will be evaluating our model based on the R^2 values, as it gives a decent sense of model performance since it represents the amount of variability that our model is capturing. It is also easy to understand since it operates on a 0 to 1 scale, with higehr values being "better".
 
 ## Baseline Model
 
@@ -252,7 +252,7 @@ Our baseline model is a linear regression model with only three features:
 * `protein`, the amount of protein in grams. This is quantitative and has been standardized, as different people have different protein needs. The standardization also allows for direct comparison with the other nutrition values.
 * `sugar`, the amount of sugar in grams. This is also quantitative and has also been standardized, though mostly for comparison purposes. Since the amount of each nutrient can vary depending on what the nutrient is, standardization allows for direct comparison.
 
-The $R^2$ value of this model was roughly 0.19 for the training data, meaning that our model captures roughly 19% of the variability in `minutes`. On the test data, the $R^2$ is now about 0.18. We believe that this is not a good model, as a vast majority of the variability is unaccounted for. We would want an $R^2$ of at least 0.5.
+The R^2 value of this model was roughly 0.19 for the training data, meaning that our model captures roughly 19% of the variability in `minutes`. On the test data, the R^2 is now about 0.18. We believe that this is not a good model, as a vast majority of the variability is unaccounted for. We would want an R^2 of at least 0.5.
 
 ## Final Model
 
@@ -268,7 +268,7 @@ We used `GridSearchCV` to identify the best maximum depth to use for our random 
 
 The optimal value for `max_depth` was determined to be 46, which was what we used for our final model.
 
-This model had a much better performance. The $R^2$ on the training set was $0.95$, while the $R^2$ on the testing set was $0.78$. This is an improvement of about $0.6$, meaning it accounts for over half of the variability in `minutes`.
+This model had a much better performance. The R^2 on the training set was 0.95, while the R^2 on the testing set was 0.78. This is an improvement of about 0.6, meaning it accounts for over half of the variability in `minutes`.
 
 Finally, the model was trained on the entire dataset.
 
@@ -282,4 +282,4 @@ This will be done via permutation test:
 * Alternative hypothesis: The model has better RMSE for well reviewed recipes versus poorly reviewed recipes.
 * Test statistic: Difference in RMSE, well reviewed - poorly reviewed
 
-We received a p-value of $0.0$, which is lower than our significance level of $0.05$. We reject the null hypothesis, meaning we find convincing evidence that the model was unfair and had better RMSE for well reviewed recipes versus poorly reviewed recipes.
+We received a p-value of 0.0, which is lower than our significance level of 0.05. We reject the null hypothesis, meaning we find convincing evidence that the model was unfair and had better RMSE for well reviewed recipes versus poorly reviewed recipes.
